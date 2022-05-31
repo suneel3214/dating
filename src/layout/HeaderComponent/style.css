@@ -1,0 +1,55 @@
+.nav-menu{
+    text-decoration: none;
+    padding: 10px;
+    color: rgb(19, 15, 15);
+    font-weight: 600;
+}
+.MuiToolbar-root{
+    background-color: #fff;
+    height: 50px;
+    min-height: 50px!important;
+}
+.logo{
+    color: rgb(241, 212, 24);
+    font-weight: 800;
+}
+
+.link{
+    padding-top: 25px !important;
+}
+.insta-icon{
+    color: #ba2e9a;
+}
+.face-icon{
+    color: #4c65a8;
+}
+.twi-icon{
+    color: #41a1f6;
+}
+.yout-icon{
+    color: #c81121;
+}
+
+@media only screen and (max-width: 780px) {
+    .box {display: none;}
+  }
+  .icon-menu{
+      text-align: end;
+  }
+.box{
+    padding: 0px 55px;
+}
+ .navbar-nav li a {
+    padding: 15px 55px !important;
+    font-weight: 900 !important;
+    color: #000000 !important;
+    font-size: 23px !important;
+ }
+
+ .nav-background {
+     background-color: #fff !important;
+ }
+
+ .navbar-brand{
+    margin-right: 6rem !important;
+ }

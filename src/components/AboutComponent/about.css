@@ -1,0 +1,38 @@
+.about-text{
+    color: #000!important;
+    margin-top: 30px !important;
+    font-weight: 300 !important;
+    padding-left: 20px !important;
+    text-align: justify !important;
+}
+.rating{
+    color: #ffc300!important;
+    margin-top: 30px !important;
+    font-weight: 600 !important;
+    padding-left: 60px !important;
+    text-align: justify !important;
+}
+
+.rating-head{
+    font-size: 15px !important;
+    color: #000 !important;
+}
+.click-icon{
+    font-size: 70px !important;
+}
+
+.icon-head{
+    color: #000 !important;
+    font-weight: 800 !important;
+    font-size: 25px !important;
+}
+.strong-text{
+    font-size: 15px !important;
+    font-weight: 200 !important;
+    color: #000 !important;
+}
+
+@media only screen and (max-width: 769px) {
+    .rating {font-size: 20px !important;}
+
+  }

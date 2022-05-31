@@ -1,0 +1,14 @@
+@media only screen and (max-width: 707px) {
+    .social-icon-btn { width: 14.5ch !important;}
+
+  }
+
+  @media only screen and (max-width: 700px) {
+    .container-flex { flex-direction: column !important;}
+
+  }
+
+  .css-1jssz31-MuiGrid-root{
+    max-width: 100% !important;
+  }
+  

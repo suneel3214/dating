@@ -1,0 +1,32 @@
+.contact-heading{
+    font-weight: 700 !important;
+    margin-top: 40px !important;
+}
+
+.let-head{
+    color: rgb(241, 212, 24);
+    font-weight: 800;
+}
+
+.bold{
+    font-weight: 800 !important;
+}
+
+.btn-style-contact{
+    background-color: #ffc300 !important;
+    color: #fff !important;
+    height: 50px !important; 
+    text-align: end !important;
+    margin-top: 5px !important;
+    width: 150px !important;
+}
+
+@media only screen and (max-width: 7685px) {
+    .media-query {font-size: 30px !important;}
+
+  }
+
+  @media only screen and (max-width: 6295px) {
+    .text-filed {width: 27ch !important;}
+
+  }

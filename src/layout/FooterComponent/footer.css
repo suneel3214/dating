@@ -1,0 +1,28 @@
+.dating-footer{
+    margin-top: 30px !important;
+}
+
+.css-1ps4owl-MuiTypography-root-MuiLink-root{
+    color: #fff !important;
+}
+
+.search{
+    background-color: #fff !important;
+    width: 220px !important;
+    border: 4px solid #ffc300 !important;
+}
+
+.footer-end{
+    margin-top: 30px !important;
+    text-align: end !important;
+}
+
+@media only screen and (max-width: 766px) {
+    .search { width: 120px !important;}
+
+  }
+
+  @media only screen and (max-width: 444px) {
+    .enjoy-text { font-size: 20px !important;}
+
+  }
