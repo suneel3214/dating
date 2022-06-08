@@ -19,40 +19,46 @@ import {
     },
   };
 
-  // const props = {
-  //   name: 'image',
-  //   action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-  //   headers: {
-  //     authorization: 'authorization-text',
-  //   },
-  
-  //   onChange(info) {
-  //     if (info.image !== 'uploading') {
-  //       console.log(info.image, info.fileList);
-  //     }
-  
-  //     if (info.image === 'done') {
-  //       message.success(`${info.image.name} file uploaded successfully`);
-  //     } else if (info.image === 'error') {
-  //       message.error(`${info.image.name} file upload failed.`);
-  //     }
-  //   },
-  // };
-
 
 const Profile = () => { 
 
     const [form] = Form.useForm();
     const history = useHistory();
-    const [selectedImage, setSelectedImage] = useState(null);
     const { getUserProfileListing } = useAuth();
-   
+    const [image , setImage] = useState(null);
+
+
     const onFinish = (data) => {
-      console.log(data);
-      getUserProfileListing(data);
+     
+      // console.log("data",data)
+      data.image = image;
+      var form = new FormData();
+
+      form.append('image',image)
+      form.append('name',data.name)
+      form.append('country',data.country)
+      form.append('about',data.about)
+      form.append('age',data.age) 
+      form.append('ethnicity',data.ethnicity)
+      form.append('sexuality',data.sexuality) 
+      form.append('gender',data.gender)
+      form.append('drinking',data.drinking)
+      form.append('smoking',data.smoking)
+      form.append('contact',data.contact) 
+      form.append('eye',data.eye)
+      form.append('hair_color',data.hair_color)
+      form.append('hair_length',data.hair_length) 
+      form.append('body_size',data.body_size)
+      form.append('user_id', localStorage.getItem('userId'))
+      getUserProfileListing(form);
       form.resetFields();
-      history.push('/');
     };
+
+    const UploadFile = (file,type) => {
+       if(type === 'image'){
+        setImage(file);
+       }
+    }
 
      return (
        <div>
@@ -127,7 +133,7 @@ const Profile = () => {
                                   <Option value="Other">Other</Option>
                                 </Select>
                               </Form.Item>
-                              <Form.Item name="gender" className='lebal' label="Gender">
+                              <Form.Item name="gender" className='lebal' label="Gender" rules={[{ required: true }]}>
                               <Select name="gender" placeholder="select your Gender">
                               <Option value="male">Male</Option>
                                   <Option value="female">Female</Option>
@@ -211,13 +217,12 @@ const Profile = () => {
                           </Row>
                           <Row>
                             <Col>
-                              <Form.Item name="image" className='lebal' label="Add Profile Image">
+                              <Form.Item name="image" className='lebal' label="Add Profile Image" rules={[{ required: true }]}>
                               <Upload 
                                type="file"
                                name="image"
                                onChange={(event) => {
-                               console.log(event.target.files[0]);
-                               setSelectedImage(event.target.files[0]);
+                                UploadFile(event.file.originFileObj,'image');
                                }}
                               >
                                 <Button icon={<UploadOutlined />}>Click to Upload</Button>

@@ -6,7 +6,7 @@ import {
 import './style.css';
 function Navbar() {
   return (
-<div>
+<div className="nav-1">
     <Box className='box' sx={{ flexGrow: 1 }}>
         <Grid container style={{height:'50px'}} spacing={2}>
             <Grid  className='link' xs={6} md={12}>

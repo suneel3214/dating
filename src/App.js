@@ -1,5 +1,5 @@
 import './App.css';
-import React,{useState} from 'react'
+import React,{createContext, useReducer} from 'react'
 import {
   BrowserRouter as Router, Route, Switch
 } from "react-router-dom";
@@ -13,31 +13,35 @@ import Contact from './components/ContactComponent/Contact';
 import About from './components/AboutComponent/About';
 import Navigation from './layout/Navigation/Navbar';
 import Profile from './components/ProfileComponent/Profile';
+import {initialState , reducer} from './reducer/UserReducer';
 
+export const UserContext = createContext();
 
 function App() {
-  // const [token, setToken] = useState();
+ 
+  const [state ,dispatch] = useReducer(reducer , initialState);
 
-  // if(!token) {
-  //   return <Login setToken={setToken} />
-  // }
   return (
-         <Router>
-           <Navbar />
-            <Navigation />
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route exact path="/login"><Login /></Route>
-              <Route exact path="/register"><Register /></Route>
-              <Route exact path="/contact"><Contact /></Route>
-              <Route exact path="/about"><About /></Route>
-              <Route exact path="/add_new_profile"><Profile /></Route>
-            </Switch>
-            <TopButton/>
-            <Footer/>
-         </Router>
+         <>
+         <UserContext.Provider value={{state , dispatch}}>
+          <Router>
+            <Navbar />
+              <Navigation />
+              <Switch>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route exact path="/login"><Login /></Route>
+                <Route exact path="/register"><Register /></Route>
+                <Route exact path="/contact"><Contact /></Route>
+                <Route exact path="/about"><About /></Route>
+                <Route exact path="/add_new_profile"><Profile /></Route>
+              </Switch>
+              <TopButton/>
+              <Footer/>
+          </Router>
+         </UserContext.Provider>
+         </>
   );
 }
 

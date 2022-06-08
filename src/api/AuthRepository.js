@@ -54,5 +54,18 @@ class AuthRepository {
         return reponse;
     }
 
+    async UserProfileGet(params) {
+        
+        const reponse = await axios.get(`/profile_get`, params)
+        .then((response) => {
+            return response;
+        })
+        .catch((error) => {
+            console.log(error);
+            return error.response;
+        });
+        return reponse;
+    }
+
 }
 export default new AuthRepository();

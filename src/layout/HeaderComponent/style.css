@@ -53,3 +53,8 @@
  .navbar-brand{
     margin-right: 6rem !important;
  }
+
+ .nav-1{
+     background-color: #000 !important;
+     color: #fff !important;
+ }

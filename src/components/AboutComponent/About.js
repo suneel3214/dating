@@ -21,6 +21,12 @@ export default function About() {
             <Box sx={{ flexGrow: 1 }} style={{marginTop:'100px'}}>
             <Grid container spacing={2}>
                     <Grid xs={6} md={6}>
+                    <div class = "row">
+                        <div class = "tdimension">
+                            <a href = "#">
+                            </a>
+                        </div>
+                    </div>
                     <img style={{width:'74%',height:'500px'}} src='https://images.unsplash.com/photo-1595831004082-7d028af1387b?crop=entropy&cs=tinysrgb&fm=jpg' />
                     </Grid>
                     <Grid xs={6} md={6} >

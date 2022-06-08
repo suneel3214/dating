@@ -36,3 +36,38 @@
     .rating {font-size: 20px !important;}
 
   }
+
+  /* Animation css start */
+
+.tdimension {
+	width: 50%;
+	height: 385px;
+	perspective: 1000px;
+}
+.tdimension a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url("https://cdn.filmytoday.com/uploads/370x450_61dc5b764ada1.jpg");
+	background-size: cover;
+	transform-style: preserve-3d;
+	transform: rotateX(70deg);
+	transition: all 0.8s;	
+}
+.tdimension:hover a {
+	transform: rotateX(20deg); 	
+}	
+.tdimension a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));    
+   	transform: rotateX(90deg);
+    transform-origin: bottom;
+}
+
+
+/* Animation css end */
