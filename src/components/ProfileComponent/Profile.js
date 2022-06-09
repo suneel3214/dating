@@ -11,6 +11,10 @@ import {
   import { useHistory } from 'react-router-dom';
   import { UploadOutlined } from '@ant-design/icons';
   import { Menu,Modal,Form, Input,Row,Col,Select,Upload,Card,message,Button  } from 'antd';
+  import copy from '../images/pro2.jpg';
+  import profile_image from '../images/profile.png';
+
+
   const { Option } = Select;
   const validateMessages = {
     required: '${label} is required!',
@@ -63,13 +67,15 @@ const Profile = () => {
      return (
        <div>
          <Container fixed>
+             <Typography className="feature-heading" variant="h3" gutterBottom component="div">
+                 <img className='pro-img' src={profile_image} alt="" />
+            </Typography><hr />
             <Box sx={{ flexGrow: 1 }} style={{marginTop:'100px'}}>
                 <Grid container spacing={2}>
                     <Grid xs={6} md={4}>
-                      <img style={{width:'74%',height:'500px'}} src='https://images.pexels.com/photos/2249172/pexels-photo-2249172.jpeg' />
-                      <img style={{width:'74%',height:'500px',marginTop: '105px'}} src='https://economictimes.indiatimes.com/thumb/msid-64168290,width-1200,height-900,resizemode-4,imgsize-243202/breadcrumbing-orbiting-and-more-update-your-dating-dictionary-with-these-new-age-terms.jpg?from=mdr' />
+                      <img style={{width:'100%',height:'1070px',padding:'10px'}} src={copy} />
                     </Grid>
-                    <Grid xs={6} md={8}>
+                    <Grid xs={6} style={{padding:'10px'}} md={8}>
                     <Card>
                       <Form 
                           form={form}
@@ -81,7 +87,7 @@ const Profile = () => {
                           <Row>
                             <Col>
                               <Typography variant="h5" gutterBottom component="div">
-                              1. Create a new profile______
+                              1. Create a new profile
                               </Typography>
                               <Form.Item name="name" className='lebal' label="Create a display name for your profile" rules={[{ required: true }]}>
                                 <Input name="name"  placeholder='Username'/>
@@ -98,7 +104,7 @@ const Profile = () => {
                               </Form.Item>
 
                               <Typography variant="h5" gutterBottom component="div">
-                              2. Description____________
+                              2. Description
                               </Typography>
 
                               <Form.Item name="about" className='lebal' label="About Me">
@@ -106,7 +112,7 @@ const Profile = () => {
                               </Form.Item>
 
                               <Typography variant="h5" gutterBottom component="div">
-                              3. Details________________
+                              3. Details
                               </Typography>
                               <Form.Item name="age" className='lebal' label="Age" rules={[{ required: true }]}>
                                 <Input name="age"  placeholder='Please Enter Your Age'/>
@@ -143,7 +149,7 @@ const Profile = () => {
                             </Col>
                           <Col >
                             <Typography variant="h5" gutterBottom component="div">
-                              4. My Habbits_______________
+                              4. My Habbits
                               </Typography>
                               <Form.Item name="drinking" className='lebal' label="Drinking">
                               <Select name="drinking" placeholder="Never">
@@ -166,13 +172,13 @@ const Profile = () => {
                                 </Select>
                               </Form.Item>
                               <Typography variant="h5" gutterBottom component="div">
-                              5. Contact____________
+                              5. Contact
                               </Typography>
                               <Form.Item name="contact" className='lebal' label="Contact Number" rules={[{ required: true }]}>
                                 <Input name="contact"  placeholder='Contact Number'/>
                               </Form.Item>
                             <Typography variant="h5" gutterBottom component="div">
-                              5. What do I look like____________
+                              5. What do I look like
                               </Typography>
                               <Form.Item name="eye" className='lebal' label="My Eyes">
                               <Select name="eye" placeholder="select Your Eyes Color">

@@ -5,14 +5,22 @@ import {
     Typography,
     Button,
     Container,
-    TextField,
-    TextareaAutosize 
   } from "@mui/material";
   import './contact.css';
   import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
   import LocationOnIcon from '@mui/icons-material/LocationOn';
   import EmailIcon from '@mui/icons-material/Email';
+  import {Form, Input ,Row ,Col } from 'antd';
+    const validateMessages = {
+        required: '${label} is required!',
+        types: {
+        email: '${label} is not a valid email!',
+        },
+    };  
+    const { TextArea } = Input;
 export default function Contact() {
+  const [form] = Form.useForm();
+
   return (
     <div>
        <Container fixed>
@@ -69,24 +77,45 @@ export default function Contact() {
                     </Grid>
                     <Grid xs={6} md={6} >
                     <Box
-                        component="form"
                         sx={{
-                            '& > :not(style)': { m: 1, width: '40ch',marginTop:'35px' },
+                            '& > :not(style)': { m: 1,marginTop:'35px' },
                         }}
                         noValidate
                         autoComplete="off"
                         >
-                        <TextField id="outlined-basic" className='text-filed' label="Full Name" placeholder='Full Name' variant="outlined" />
-                        <TextField id="outlined-basic" className='text-filed' label="Email" placeholder='Email' variant="outlined" />
-                        <TextareaAutosize
-                            aria-label="minimum height"
-                            minRows={8}
-                            placeholder="Your message......"
-                            style={{ width: '93%' }}
-                        />
-                        <Button className='btn-style-contact' variant="contained"  color="secondary">
-                            Send
-                        </Button>
+                         <Form
+                            form={form}
+                            name="basic"
+                            initialValues={{ remember: true }}
+                            autoComplete="off"
+                            layout="vertical" 
+                            style={{padding:'10px'}}
+                            >
+                            <Form.Item
+                                label="Name"
+                                name="name"
+                                className='lebal'
+                                rules={[{ required: true, message: 'Please Enter Your Name!' }]}
+                            >
+                                <Input placeholder="Name" style={{width:'27ch'}} name="name"/>
+                            </Form.Item>
+                            <Form.Item
+                                label="Email"
+                                name="email"
+                                className='lebal'
+                                rules={[{ required: true, message: 'Please Enter Your Email Address!' }]}
+                            >
+                                <Input placeholder="Email Address" style={{width:'27ch'}} name="email"/>
+                            </Form.Item>
+                            <Form.Item label="Message" className='lebal' >
+                                <TextArea rows={4} placeholder="Send message" />
+                            </Form.Item>
+                            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+                                <Button type="primary" variant="contained"  color="secondary" htmlType="submit">
+                                Sign In
+                                </Button>&nbsp;&nbsp;&nbsp;
+                            </Form.Item>
+                        </Form>
                     </Box>
                     </Grid>
                 </Grid>

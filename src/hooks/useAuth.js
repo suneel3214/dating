@@ -90,7 +90,7 @@ const {state,dispatch} = useContext(UserContext);
 
                 notification.open({
                   message: "Register",
-                  description: "Profile Created Successfukky...!!",
+                  description: "Profile Created Successfully...!!",
                   icon: <SmileOutlined style={{ color: "#108ee9" }} />,
                 });
                   history.push('/');

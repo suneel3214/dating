@@ -10,6 +10,7 @@ import Cookies  from "js-cookie";
 import useAuth from "../../hooks/useAuth";
 import { useHistory } from 'react-router-dom';
 import {UserContext} from './../../App';
+import logo from '../../components/images/logo.gif'
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -88,7 +89,7 @@ const RenderMenu = () => {
       <>
       <Menu mode="horizontal">
          <Menu.Item  className='list'>
-         <Link className="navbar-brand" to="#"><img style={{width:'125px'}} src="https://www.logopik.com/wp-content/uploads/edd/2018/09/A-Fast-Dating-Vactor-Logo.png" alt="" /></Link>
+         <Link className="navbar-brand" to="#"><img style={{width:'125px'}} src={logo} alt="" /></Link>
         </Menu.Item>
         <Menu.Item  className='list'>
           <Link to="/">Home</Link>

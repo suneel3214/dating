@@ -71,3 +71,7 @@
 
 
 /* Animation css end */
+
+.about .ant-col{
+    width: 230px !important;
+}
